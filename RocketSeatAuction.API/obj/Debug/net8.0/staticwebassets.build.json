@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "FTR9bbd7hKG3nZv2TfC8URJRsMLanb4h0/kycVSvWSQ=",
+  "Source": "RocketSeatAuction.API",
+  "BasePath": "_content/RocketSeatAuction.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
