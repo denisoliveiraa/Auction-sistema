@@ -7,6 +7,42 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "RocketSeatAuction.API.Entities.Auction",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      }
+    ]
+  },
+  {
+    "ContainingType": "RocketSeatAuction.API.Controller.OfferController",
+    "Method": "CreateOffer",
+    "RelativePath": "Offer/{itemId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "itemId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "RocketSeatAuction.API.Communication.Request.RequestCreateOfferResponse",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

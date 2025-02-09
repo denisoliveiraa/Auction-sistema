@@ -78,3 +78,4 @@ C:\dev\RocketSeatAuction\RocketSeatAuction.API\obj\Debug\net8.0\refint\RocketSea
 C:\dev\RocketSeatAuction\RocketSeatAuction.API\obj\Debug\net8.0\RocketSeatAuction.API.pdb
 C:\dev\RocketSeatAuction\RocketSeatAuction.API\obj\Debug\net8.0\RocketSeatAuction.API.genruntimeconfig.cache
 C:\dev\RocketSeatAuction\RocketSeatAuction.API\obj\Debug\net8.0\ref\RocketSeatAuction.API.dll
+C:\dev\RocketSeatAuction\RocketSeatAuction.API\obj\Debug\net8.0\RocketSeatAuction.API.sourcelink.json

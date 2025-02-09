@@ -15,6 +15,6 @@ public class GetCurrentAuctionUseCase
         return repository
             .Auctions
             .Include(auction => auction.Items)
-            .First();
+            .FirstOrDefault();
     }
 }
