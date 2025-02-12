@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using RocketSeatAuction.API.Repositories;
+using RocketseatAuction.API.Repositories;
 
 namespace RocketSeatAuction.API.Filters;
 
@@ -14,7 +14,7 @@ public class AuthenticationUserAttribute : AuthorizeAttribute, IAuthorizationFil
         {
             var token = TokenOnRequest(context.HttpContext);
 
-            var repository = new RocketSeatAuctionDbContext();
+            var repository = new RocketseatAuctionDbContext();
 
             var email = FromBase64String(token);
 

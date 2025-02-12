@@ -1,4 +1,6 @@
 using RocketSeatAuction.API.Filters;
+using RocketSeatAuction.API.Services;
+using RocketSeatAuction.API.UseCase.Offers.CreateOffer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<AuthenticationUserAttribute>();
+builder.Services.AddScoped<LoggedUser>();
+builder.Services.AddScoped<CreateOfferUseCase>();
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
