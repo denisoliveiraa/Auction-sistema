@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using RocketSeatAuction.API.UseCase;
 using RocketSeatAuction.API.Enums;
 using RocketSeatAuction.API.Entities;
+using RocketSeatAuction.API.Filter;
 
 namespace RocketSeatAuction.API.Controller;
 [Route("api/[controller]")]
 [ApiController]
+[ServiceFilter(typeof(AuthenticationUserAttribute))]
 public class AuctionController : BaseController
 {
     [HttpGet]

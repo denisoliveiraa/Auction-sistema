@@ -1,16 +1,16 @@
 using Microsoft.OpenApi.Models;
-using RocketSeatAuction.API.Filters;
-using RocketSeatAuction.API.Services;
-using RocketSeatAuction.API.UseCase.Offers.CreateOffer;
+using RocketSeatAuction.API.Filter;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(options =>
+builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<AuthenticationUserAttribute>();
+/*builder.Services.AddSwaggerGen(options =>
 {
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
@@ -41,11 +41,8 @@ builder.Services.AddSwaggerGen(options =>
         }
     });
 });
+*/
 
-
-builder.Services.AddScoped<AuthenticationUserAttribute>();
-builder.Services.AddScoped<LoggedUser>();
-builder.Services.AddScoped<CreateOfferUseCase>();
 builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();

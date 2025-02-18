@@ -36,48 +36,6 @@
           }
         }
       }
-    },
-    "/Offer/{itemId}": {
-      "post": {
-        "tags": [
-          "Offer"
-        ],
-        "parameters": [
-          {
-            "name": "itemId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestCreateOfferResponse"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestCreateOfferResponse"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/RequestCreateOfferResponse"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
     }
   },
   "components": {
@@ -148,38 +106,7 @@
           }
         },
         "additionalProperties": false
-      },
-      "RequestCreateOfferResponse": {
-        "type": "object",
-        "properties": {
-          "price": {
-            "type": "number",
-            "format": "double"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "securitySchemes": {
-      "Bearer": {
-        "type": "apiKey",
-        "description": "JWT Authorization header using the Bearer scheme.\r\n                      Enter 'Bearer' [space] and then your token in the text input below;\r\n                      Example: 'Bearer 12345abcdef'",
-        "name": "Authorization",
-        "in": "header"
       }
     }
-  },
-  "security": [
-    {
-      "Bearer": [ ]
-    }
-  ]
+  }
 }
