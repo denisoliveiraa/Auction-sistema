@@ -1,16 +1,13 @@
 using Microsoft.OpenApi.Models;
-using RocketSeatAuction.API.Filter;
+using RocketseatAuction.API.Filters;
+using RocketseatAuction.API.Services;
+using RocketseatAuction.API.UseCases.Offers.CreateOffer;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<AuthenticationUserAttribute>();
-/*builder.Services.AddSwaggerGen(options =>
+builder.Services.AddSwaggerGen(options =>
 {
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
@@ -41,13 +38,15 @@ builder.Services.AddScoped<AuthenticationUserAttribute>();
         }
     });
 });
-*/
+
+builder.Services.AddScoped<AuthenticationUserAttibute>();
+builder.Services.AddScoped<LoggedUser>();
+builder.Services.AddScoped<CreateOfferUseCase>();
 
 builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
