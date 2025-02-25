@@ -1,6 +1,5 @@
 ﻿using RocketseatAuction.API.Communication.Requests;
 using RocketseatAuction.API.Contracts;
-using RocketseatAuction.API.Entities;
 using RocketseatAuction.API.Services;
 using RocketSeatAuction.API.Entities;
 

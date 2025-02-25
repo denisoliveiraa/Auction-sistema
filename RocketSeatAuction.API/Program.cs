@@ -1,7 +1,9 @@
 using Microsoft.OpenApi.Models;
+using RocketseatAuction.API.Contracts;
 using RocketseatAuction.API.Filters;
 using RocketseatAuction.API.Services;
 using RocketseatAuction.API.UseCases.Offers.CreateOffer;
+using RocketSeatAuction.API.Repositories.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,6 +44,8 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddScoped<AuthenticationUserAttibute>();
 builder.Services.AddScoped<LoggedUser>();
 builder.Services.AddScoped<CreateOfferUseCase>();
+builder.Services.AddScoped<IAuctionRepository, AuctionRepository>();
+builder.Services.AddScoped<IOfferRepository, OfferRepositiry>();
 
 builder.Services.AddHttpContextAccessor();
 

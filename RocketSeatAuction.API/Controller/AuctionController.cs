@@ -1,32 +1,22 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using RocketSeatAuction.API.UseCase;
-using RocketSeatAuction.API.Enums;
+﻿using Microsoft.AspNetCore.Mvc;
 using RocketSeatAuction.API.Entities;
-using RocketSeatAuction.API.Filter;
+using RocketSeatAuction.API.UseCase.Auctions.GetCurrent;
 
-namespace RocketSeatAuction.API.Controller;
-[Route("api/[controller]")]
-[ApiController]
-[ServiceFilter(typeof(AuthenticationUserAttribute))]
-public class AuctionController : BaseController
+namespace RocketseatAuction.API.Controllers;
+
+public class AuctionController : RocketseatAuctionBaseController
 {
     [HttpGet]
-    [ProducesResponseType(typeof(Auction),StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(Auction), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
-    public IActionResult GetCurrentAuctionUsecase()
+    public IActionResult GetCurrentAuction([FromServices] GetCurrentAuctionUseCase useCase)
     {
-        var useCase = new GetCurrentAuctionUseCase();
 
         var result = useCase.Execute();
-
 
         if (result is null)
             return NoContent();
 
         return Ok(result);
     }
-
-  
-
 }

@@ -1,12 +1,6 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿namespace RocketseatAuction.API.Communication.Requests;
 
-namespace RocketSeatAuction.API.Communication.Request;
-
-public class RequestCreateOfferResponse
+public class RequestCreateOfferJson
 {
     public decimal Price { get; set; }
-
-    public string Name { get; set; }
-
-    public string Description { get; set; }
 }

@@ -1,5 +1,9 @@
-﻿namespace RocketSeatAuction.API.Controller;
+﻿using Microsoft.AspNetCore.Mvc;
 
-public class RocketSeatAuctionBaseController
+namespace RocketseatAuction.API.Controllers;
+
+[Route("[controller]")]
+[ApiController]
+public class RocketseatAuctionBaseController : ControllerBase
 {
 }

@@ -1,5 +1,8 @@
-﻿namespace RocketSeatAuction.API.Contracts;
+﻿using RocketSeatAuction.API.Entities;
 
-public class IAuctionRepository
+namespace RocketseatAuction.API.Contracts;
+
+public interface IAuctionRepository
 {
+    Auction? GetCurrent();
 }
