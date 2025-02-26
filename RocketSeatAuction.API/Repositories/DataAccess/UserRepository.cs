@@ -1,18 +1,17 @@
-﻿using RocketseatAuction.API.Repositories;
+﻿using RocketseatAuction.API.Entities;
 using RocketSeatAuction.API.Contracts;
 
-namespace RocketSeatAuction.API.Repositories.DataAccess;
+namespace RocketseatAuction.API.Repositories.DataAccess;
 
 public class UserRepository : IUserRepository
 {
-    private readonly RocketseatAuctionDbContext _userRepository;
+    private readonly RocketseatAuctionDbContext _dbContext;
+    public UserRepository(RocketseatAuctionDbContext dbContext) => _dbContext = dbContext;
 
-    private UserRepository(RocketseatAuctionDbContext userRepository)
+    public bool ExistUserWithEmail(string email)
     {
-        _userRepository = userRepository;
+        return _dbContext.Users.Any(user => user.Email.Equals(email));
     }
 
-    public bool ExistUser
-
-
+    public User GetUserByEmail(string email) => _dbContext.Users.First(user => user.Email.Equals(email));
 }
