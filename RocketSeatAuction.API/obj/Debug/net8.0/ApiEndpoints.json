@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "RocketSeatAuction.API.Controller.AuctionController",
-    "Method": "GetCurrentAuctionUsecase",
-    "RelativePath": "api/Auction",
+    "ContainingType": "RocketseatAuction.API.Controllers.AuctionController",
+    "Method": "GetCurrentAuction",
+    "RelativePath": "Auction",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -23,5 +23,26 @@
         "StatusCode": 204
       }
     ]
+  },
+  {
+    "ContainingType": "RocketseatAuction.API.Controllers.OfferController",
+    "Method": "CreateOffer",
+    "RelativePath": "Offer/{itemId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "itemId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "RocketseatAuction.API.Communication.Requests.RequestCreateOfferJson",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
